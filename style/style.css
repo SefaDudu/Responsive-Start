@@ -1,0 +1,187 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.wrapper{
+    /* yayılma alanları */
+    width: 99%;
+
+}
+.container{
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    /* satırlar sığmıyorsa kaysın */
+    flex-direction: column;
+    /* satırlar alt alta gelsin */
+}
+header{
+    width: 100%;
+    height: 100px;
+    background:pink;
+}
+section.bolum1{
+    display: flex;
+
+    width: 100%;
+    flex-wrap: nowrap;
+    /* alta kaymasını engelliyoruz */
+    align-items: flex-start;
+    /* baştan sıralamaya başla */
+    flex-direction: row;
+    /* satırda yan yana gelsinler */
+}
+.slider{
+    width: 750px;
+    height: 160px;
+    background: gray;
+    flex-grow:1 ;
+    /* ekranı kapsasın */
+    margin: 5px 0 5px 0;
+    flex-shrink: 2;
+    /* en çok bu daralması için */
+}
+aside{
+    display: flex;
+    flex-wrap: wrap;
+    /* alt satıra kaysın */
+    flex-shrink: 1;
+    width: 250px;
+    height: 160px;
+    flex-grow: 1;
+    margin: 5px 0 0 5px;
+    align-content: stretch;
+
+}
+.aciklama{
+    /* asside içindeki açıklama */
+    flex-basis: 100%;
+    margin-bottom: 5px;
+    background: brown;
+}
+.aciklama:nth-child(3){
+    margin-bottom: 0;
+}
+section.bolum2{
+    display: flex;
+    height: 200px;
+    width: 100%;
+    flex-wrap: nowrap;
+
+}
+article{
+    flex-basis:750px ;
+    height: 200px;
+    background: burlywood;
+    flex-grow: 1;
+    flex-shrink: 2;
+}
+.yanmenu{
+    flex-basis: 250px;
+    background: chartreuse;
+    margin-left: 5px;
+    flex-shrink: 1;
+    flex-grow: 1;
+
+    align-self: stretch;
+    /* heigh girmek yerine bunu girebilirz */
+
+}
+footer{
+    width: 100%;
+    height: 100px;
+    background: darkblue;
+    margin-top: 5px;
+    margin-right: 0px;
+}
+    @media screen and (max-width:760px){
+        section.bolum1{
+            flex-direction: column;
+        }
+        .slider{
+            width: 100%;
+            margin:5px 0 5px 0 ;
+        }
+        aside{
+            margin:0;
+            flex-wrap: nowrap;
+            flex-direction: row;
+            flex-grow: 1;
+
+        width: 100%;
+        display: flex;
+        height: 70px;
+
+        }
+        .aciklama{
+            width: 100px;
+            flex-grow: 1;
+            margin-bottom: 5px;
+            margin-right: 3px;
+            height: 60px;
+        }
+        .aciklama:nth-last-child(1)
+        {
+            margin-right: 0;
+        }
+        
+    }
+
+    
+    @media screen and (max-width:320px){
+        section.bolum1{
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            flex-direction: column;
+        }
+        .slider{
+            width: 100%;
+            height: 160px;
+            margin:5px 0 5px 0 ;
+
+        }
+        aside{
+            margin:0;
+            width: 100%;
+            flex-wrap: nowrap;
+            flex-direction: row;
+             height: 150px;
+              margin-top: 5px;
+              flex-direction: column;
+
+        width: 100%;
+        display: flex;
+        height: 70px;
+
+        }
+        .aciklama{
+            width: 100%;
+            flex-grow: 1;
+            margin-bottom: 5px;
+            margin-right: 3px;
+            height: 120px;
+        }
+       section.bolum2{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        flex-direction: column;
+        height: 150px;
+       }
+       article{
+           flex-grow: 1;
+           width: 150px;
+           height: 150px;
+           margin: 5px 0 ;
+       }
+       .yanmenu{
+           display: none;
+       }
+        
+    }
